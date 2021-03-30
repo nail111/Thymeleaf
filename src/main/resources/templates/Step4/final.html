@@ -18,12 +18,14 @@
     <tr>
         <th>Firstname</th>
         <th>Lastname</th>
+        <th>Gender</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="us: ${emp}">
         <td th:text="${us.firstname}" />
         <td th:text="${us.lastname}" />
+        <td th:text="${us.gender}" />
     </tr>
     </tbody>
 </table>

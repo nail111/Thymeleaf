@@ -12,6 +12,10 @@
     LastName:
     <input type="text" placeholder="What's your lastname?" th:field="*{lastname}" />
     <br>
+    <select th:field="*{gender}">
+        <option th:value="Male" th:text="Male" />
+        <option th:value="Female" th:text="Female" />
+    </select>
     <button type="submit">Enter</button>
 </form>
 </body>
