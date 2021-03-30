@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<form th:action="result" th:object="${emp}" method="get">
+    <hr>
+    <input type="text" placeholder="What's your name?" th:field="*{name}" />
+    <hr>
+    <br>
+        <input type="radio" th:field="*{programLang}" th:value="Java" th:text="Java" />
+    <br>
+        <input type="radio" th:field="*{programLang}" th:value="PHP" th:text="PHP" />
+    <br>
+        <input type="radio" th:field="*{programLang}" th:value="C" th:text="C" />
+    <br>
+    <input type="radio" th:field="*{programLang}" th:value="JavaScript" th:text="JavaScript" />
+    <hr>
+    <br>
+    <button type="submit">Enter</button>
+</form>
+</body>
+</html>
