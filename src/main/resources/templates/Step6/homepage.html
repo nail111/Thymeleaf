@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<form th:action="result" th:object="${us}" method="get">
+    <input type="checkbox" th:field="*{choose}" th:value="Java" th:text="Java" />
+    <input type="checkbox" th:field="*{choose}" th:value="JavaScript" th:text="JavaScript" />
+    <br>
+    <button type="submit">Enter</button>
+</form>
+</body>
+</html>

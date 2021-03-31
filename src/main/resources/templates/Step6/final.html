@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Page</title>
+</head>
+<body>
+<tr th:each="us: ${emp}">
+    <td th:text="${us.choose}" />
+</tr>
+</body>
+</html>
