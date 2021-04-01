@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<form th:action="result" th:object="${us}" method="get">
+    <p>
+        Enter your name: <input type="text" th:field="*{name}" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </p>
+        <br>
+    <p>
+        Enter your id: <input type="text" th:field="*{id}" />
+        <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+    </p>
+    <br>
+    <button type="submit">Enter</button>
+</form>
+</body>
+</html>
