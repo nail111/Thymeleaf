@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+// radio
+
+
 @Controller
 public class AppController {
     @Autowired
@@ -22,5 +25,4 @@ public class AppController {
         return "step5/final";
     }
 
-    // radio added
 }
