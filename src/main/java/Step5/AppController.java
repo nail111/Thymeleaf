@@ -16,10 +16,11 @@ public class AppController {
         model.addAttribute("emp",employee);
         return "step5/homepage";
     }
-
     @GetMapping("/result")
     public String result(@ModelAttribute("emp") Employee employee1,Model model) {
         model.addAttribute("us",employee1);
         return "step5/final";
     }
+
+    // radio added
 }
