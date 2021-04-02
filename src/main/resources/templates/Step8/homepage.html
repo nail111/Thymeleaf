@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<form th:action="result" th:object="${us}" method="get">
+    <hr>
+    <p>
+        Enter the number: <input type="text" th:field="*{number}" />
+        <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}" />
+    </p>
+    <hr>
+    <br>
+    <button type="submit">Enter</button>
+</form>
+</body>
+</html>
