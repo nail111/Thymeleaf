@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container"/>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Way</th>
+        <th>Active</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody th:each="ww : ${all}">
+    <tr>
+        <td th:text="${ww.id}"/>
+        <td th:text="${ww.name}"/>
+        <td th:text="${ww.language}"/>
+        <td th:text="${ww.way}"/>
+        <td th:text="${ww.active}"/>
+        <td>
+            <a th:href="@{/delete/{id}(id=${ww.id})}" class="btn btn-danger">Delete</a>
+            <a th:href="@{/update/{id}(id=${ww.id})}" class="btn btn-warning">Update</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<hr>
+<form th:action="@{/}" method="get">
+    <input type="text" name="keyword" placeholder="Find by name"/>
+    <button type="submit" class="btn btn-primary">Find</button>
+</form>
+<br>
+<hr>
+<a th:href="add" class="btn btn-success">Add Student</a>
+</body>
+</html>

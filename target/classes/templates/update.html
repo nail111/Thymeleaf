@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/finalOfUpdating/{id}(id = ${id})}" th:object="${obj}" th:method="get">
+    <div class="container"/>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Way</th>
+            <th>Active</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input type="text" th:field="*{name}" placeholder="Enter your name"/>
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </td>
+            <td>
+                <input type="checkbox" th:value="English" th:text="English" th:field="*{language}"/>
+                <br>
+                <input type="checkbox" th:value="Russian" th:text="Russian" th:field="*{language}"/>
+                <span th:if="${#fields.hasErrors('language')}" th:errors="*{language}"></span>
+            </td>
+            <td>
+                <select th:field="*{way}">
+                    <option th:value="BackEnd" th:text="BackEnd" th:field="*{way}"/>
+                    <option th:value="FrontEnd" th:text="FrontEnd" th:field="*{way}"/>
+                    <option th:value="Fullstack" th:text="Fullstack" th:field="*{way}"/>
+                </select>
+            </td>
+            <td>
+                <input type="radio" th:value="Online" th:text="Online" th:field="*{active}"/>
+                <br>
+                <input type="radio" th:value="Offline" th:text="Offline" th:field="*{active}"/>
+                <span th:if="${#fields.hasErrors('active')}" th:errors="*{active}"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <br>
+    <button type="submit">Enter</button>
+</form>
+</body>
+</html>
